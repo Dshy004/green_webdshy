@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --black202020: #202020;
+  --green0a3622: #0a3622;
+  --redf05151: #f05151;
+  --rgba05: rgba(0,0,0,0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  resize: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url(./img/green.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 0;
+}
+
+::placeholder {
+  color: var(--black);
+}
+
+#app, .not_responsive {
+  min-height: 100vh;
+  background: var(--rgba05);
+  width: 100%;
+}
+
+header .btn_login, header .name {
+  font-weight: 600;
+}
+
+header .forms form button, header .forms form .input-box input, header .forms, header .btn_login, header .name {
+  padding: 10px;
+}
+
+.not_responsive {
+  display: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+header .name {
+  color: var(--white);
+  background-color: var(--green0a3622);
+  border-radius: 5px;
+}
+header .btn_login {
+  color: var(--green0a3622);
+  background-color: var(--white);
+  border: 2px solid var(--green0a3622);
+  border-radius: 5px;
+}
+header .btn_login:hover {
+  color: var(--white);
+  background-color: var(--green0a3622);
+}
+header .forms {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--rgba05);
+}
+header .forms form {
+  padding: 20px;
+  background-color: var(--green0a3622);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+}
+header .forms form h3 {
+  color: var(--white);
+}
+header .forms form .input-box {
+  width: 100%;
+  margin: 10px 0;
+}
+header .forms form .input-box input {
+  width: 100%;
+  border-radius: 5px;
+}
+header .forms form button {
+  background-color: var(--black);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+}
+header .forms form button:focus {
+  transform: scale(0.8);
+}
+header .forms form p {
+  color: var(--white);
+}
+header .forms form p {
+  cursor: pointer;
+}
+header .forms form .input-box span {
+  color: var(--redf05151);
+  font-size: 13px;
+  font-weight: 600;
+}
+header .forms form .input-check {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: end;
+}
+header .forms form .input-check label {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--white);
+  font-size: 13px;
+}
+header .forms .close_form {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: var(--redf05151);
+  color: var(--white);
+  margin: 0 -320px 10px 0;
+}
+
+header {
+  animation: slideHeader 1.2s ease;
+}
+
+@keyframes slideHeader {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header .forms form {
+  animation: slideForms 0.3s ease;
+}
+
+@keyframes slideForms {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px;
+}
+section .slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  justify-content: center;
+}
+section .slogan .word {
+  margin: 0 20px;
+  color: var(--white);
+  letter-spacing: 10px;
+  font-size: 7vw;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--white);
+}
+section .logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+}
+section .logo a {
+  padding: 10px 20px;
+  background-color: var(--green0a3622);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 3vw;
+  margin: 20px;
+}
+section .logo a:hover {
+  scale: 1.12;
+  box-shadow: 0 0 4px 0 var(--white);
+}
+
+section .slogan .first {
+  animation: slideFirst 1.2s ease;
+}
+
+@keyframes slideFirst {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+section .slogan .second {
+  animation: slideSecond 1.2s ease;
+}
+
+@keyframes slideSecond {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+section .slogan .third {
+  animation: slideThird 1.2s ease;
+}
+
+@keyframes slideThird {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(1) {
+  animation: slideA1 1.2s ease;
+}
+
+@keyframes slideA1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(2) {
+  animation: slideA2 1.2s ease;
+}
+
+@keyframes slideA2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(3) {
+  animation: slideA3 1.2s ease;
+}
+
+@keyframes slideA3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-75%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(4) {
+  animation: slideA4 1.2s ease;
+}
+
+@keyframes slideA4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-75%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(5) {
+  animation: slideA5 1.2s ease;
+}
+
+@keyframes slideA5 {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .logo a:nth-child(6) {
+  animation: slideA6 1.2s ease;
+}
+
+@keyframes slideA6 {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 1050px) {
+  #app {
+    display: none;
+  }
+  .not_responsive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 5vw;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

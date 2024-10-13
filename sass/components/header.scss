@@ -1,0 +1,137 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    z-index: 100;
+
+    .name {
+        @extend %fw600;
+        @extend %pd10px;
+
+        color: var(--white);
+        background-color: var(--green0a3622);
+        border-radius: 5px;
+    }
+
+    .btn_login {
+        @extend %fw600;
+        @extend %pd10px;
+        color: var(--green0a3622);
+        background-color: var(--white);
+        border: 2px solid var(--green0a3622);
+        border-radius: 5px;
+
+        &:hover {
+            color: var(--white);
+            background-color: var(--green0a3622);
+        }
+    }
+
+    .forms {
+        @extend %pd10px;
+        position: fixed;
+        inset: 0;
+        z-index: 101;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: var(--rgba05);
+
+        form {
+            padding: 20px;
+            background-color: var(--green0a3622);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 350px;
+        }
+        form h3 {
+            color: var(--white);
+        }
+        form .input-box {
+            width: 100%;
+            margin: 10px 0;
+        }
+        form .input-box input {
+            @extend %pd10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        form button {
+            @extend %pd10px;
+            background-color: var(--black);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--white);
+            cursor: pointer;
+
+            &:focus {
+                transform: scale(0.8);
+            }
+        }
+        form p {
+            color: var(--white);
+        }
+        form p {
+            cursor: pointer;
+        }
+        form .input-box span {
+            color: var(--redf05151);
+            font-size: 13px;
+            font-weight: 600;
+        }
+        form .input-check {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-items: center;
+            justify-content: end;
+        }
+        form .input-check label {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--white);
+            font-size: 13px;
+        }
+        .close_form {
+            padding: 5px 10px;
+            border-radius: 8px;
+            background-color: var(--redf05151);
+            color: var(--white);
+            margin: 0 -320px  10px 0;
+        }
+    }
+}
+header {
+    animation: slideHeader 1.2s ease;
+}
+@keyframes slideHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+header .forms form {
+    animation: slideForms .3s ease;
+}
+@keyframes slideForms {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

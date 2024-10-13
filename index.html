@@ -1,0 +1,80 @@
+<!-- Designed by Webdshy, Website: https://webdshy.alwaysdata.net -->
+<!-- Stack(languages) used: html,Css(sass),Vue.js  -->
+<!-- Not responsive -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green - WebDshy</title>
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
+    <!-- Style -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="./" class="name"><i class="fas fa-leaf"></i> Green - WebDshy</a>
+            <button class="btn_login" @click="showForm"><i class="fas fa-user"></i> Login</button>
+            <div class="forms" v-show="forms">
+                <button class="close_form" @click="closeForm"><i class="fas fa-xmark"></i></button>
+                <!-- Login form -->
+                <form action="" method="" v-show="login">
+                    <h3 class="">LOGIN</h3>
+                    <div class="input-box">
+                        <input type="email" name="emailog" id="emailog" placeholder="Enter your email" required />
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="passwordlog" id="passwordlog" placeholder="Enter your password" required />
+                    </div>
+                    <button type="submit" name="signin">Sign In</button>
+                    <p @click="toggleForms"><b>Register</b>, if you don't have an account</p>
+                </form>
+                <!-- Register form -->
+                <form action="" method="" v-show="register">
+                    <h3 class="">REGISTER</h3>
+                    <div class="input-box">
+                        <input type="email" v-model="email" @input="validateEmail" name="email" :class="{'is-invalid': emailError}" placeholder="Enter an email" required />
+                        <span v-if="emailError">{{ emailError }}</span>
+                    </div>
+                    <div class="input-box">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="password" @input="validatePassword" name="password" :class="{'is-invalid': passwordError}" placeholder="Create a password" required />
+                        <span v-if="passwordError">{{ passwordError }}</span>
+                    </div>
+                    <div class="input-box">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="confirmPassword" @input="validateConfirmPassword" name="confirmPassword" :class="{'is-invalid': confirmPasswordError}" placeholder="Confirm password" required />
+                        <span v-if="confirmPasswordError">{{ confirmPasswordError }}</span>
+                    </div>
+                    <div class="input-check">
+                        <input type="checkbox" id="showPassword" @click="togglePasswordVisibility" class="cursor-pointer hidden">
+                        <label for="showPassword">Show password</label>
+                    </div>
+                    <button type="submit" name="signup">Sign up</button>
+                    <p @click="toggleForms"><b>Log in</b>, if you are already a member</p>
+                </form>
+            </div>
+        </header>
+        <section>
+            <div class="slogan">
+                <h1 class="first word">LET'S</h1>
+                <h1 class="second word">PRESERVE</h1>
+                <h1 class="third word">NATURE</h1>
+            </div>
+            <div class="logo">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-snapchat"></i></a>
+            </div>
+        </section>
+    </div>
+    <div class="not_responsive">NOT RESPONISVE</div>
+    <script src="./app.js"></script>
+</body>
+</html>
